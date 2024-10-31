@@ -13,10 +13,14 @@ export const Atom: React.FC<{
 
   return (
     <svg
-      viewBox={`0 0 ${config.width} ${config.height}`}
+      width="400px"
+      height="400px"
+      viewBox="0 0 400 400"
       style={{
         position: "absolute",
         transform: `scale(${scale})`,
+        top: `${(config.height - 400) / 2}px`,
+        left: `${(config.width - 400) / 2}px`,
       }}
     >
       <defs>
@@ -25,12 +29,23 @@ export const Atom: React.FC<{
           <stop offset="100%" stopColor={color2} />
         </linearGradient>
       </defs>
-      <circle
-        r={70}
-        cx={config.width / 2}
-        cy={config.height / 2}
-        fill={`url(#${gradientId})`}
-      />
+      <g
+        stroke="none"
+        strokeWidth="1"
+        fill="none"
+        fillRule="evenodd"
+        fontFamily="Menlo-Bold, Menlo"
+        fontSize="100"
+        fontWeight="bold"
+      >
+        <text>
+          <tspan x="19" y="235" fill={`url(#${gradientId})`}>n</tspan>
+          <tspan x="79.2" y="235" fill={`url(#${gradientId})`}>0</tspan>
+          <tspan x="139.4" y="235" fill={`url(#${gradientId})`}>c</tspan>
+          <tspan x="199.6" y="235" fill={`url(#${gradientId})`}>0</tspan>
+          <tspan x="259.8" y="235" fill={`url(#${gradientId})`}>de</tspan>
+        </text>
+      </g>
     </svg>
   );
 };

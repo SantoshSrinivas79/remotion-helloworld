@@ -5,8 +5,8 @@ const getCircumferenceOfArc = (rx: number, ry: number) => {
   return Math.PI * 2 * Math.sqrt((rx * rx + ry * ry) / 2);
 };
 
-const rx = 135;
-const ry = 300;
+const rx = 250;
+const ry = 250;
 const cx = 960;
 const cy = 540;
 const arcLength = getCircumferenceOfArc(rx, ry);
@@ -33,7 +33,7 @@ export const Arc: React.FC<{
       }}
     >
       <defs>
-        <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="50%">
           <stop offset="0%" stopColor={color1} />
           <stop offset="100%" stopColor={color2} />
         </linearGradient>
